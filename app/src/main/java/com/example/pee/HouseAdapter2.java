@@ -26,14 +26,12 @@ import java.util.List;
 
 
 public class HouseAdapter2 extends RecyclerView.Adapter<HouseAdapter2.HouseReview2> {
-    RelativeLayout relativeLayout;
-    Activity activity;
-    Function function;
-    RecyclerView mRecyclerV;
+    private Activity activity;
+    private Function function;
 
-    HomeDatabaseHelper objectDatabaseHandler;
+    private HomeDatabaseHelper objectDatabaseHandler;
 
-    List<Homeclasse> home= new ArrayList<Homeclasse>();
+    private List<Homeclasse> home;
 
     public HouseAdapter2(ArrayList<Homeclasse> home, Activity activity, Function<Intent,Object> function){
         this.home=home;
@@ -76,15 +74,7 @@ public class HouseAdapter2 extends RecyclerView.Adapter<HouseAdapter2.HouseRevie
 
     @Override
     public int getItemCount() {
-
-        if (home != null) {
-            return home.size();
-        }
-        else {
-
-           return 0;
-        }
-
+        return home.size();
     }
 
 
@@ -100,9 +90,7 @@ public class HouseAdapter2 extends RecyclerView.Adapter<HouseAdapter2.HouseRevie
         Context c;
         TextView txt2;
         public HouseReview2(@NonNull View view) {
-
             super(view);
-
            txtName = view.findViewById(R.id.nameTextView);
            txtDescription = view.findViewById(R.id.descriptionTextView);
            txtphone = view.findViewById(R.id.descriptionTextView4);

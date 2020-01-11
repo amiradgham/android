@@ -94,33 +94,26 @@ public class HomeDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<Homeclasse> getalHouse() {
-        try {
-            ArrayList<Homeclasse> home = new ArrayList<>();
-            SQLiteDatabase maBD = this.getReadableDatabase();
-            Cursor c = maBD.rawQuery("select * from " + TABLE_house, null);
-            if (c.getCount() != 0) {
-                while (c.moveToNext()) {
-                    int id = c.getInt(0);
-                    String location = c.getString(1);
-                    String type = c.getString(2);
-                    String number = c.getString(3);
-                    String surface = c.getString(4);
-                    String phone = c.getString(5);
-                    byte[] imagebyte = c.getBlob(6);
-                    Bitmap objectbitmap = BitmapFactory.decodeByteArray(imagebyte, 0, imagebyte.length);
-                    String email = c.getString(7);
-                    home.add(new Homeclasse(id, location, type, number, surface, phone, objectbitmap, email));
-                }
-                return home;
-            } else {
-                Toast.makeText(context, "no Values existe into Database ", Toast.LENGTH_SHORT).show();
-                return null;
+        ArrayList<Homeclasse> home = new ArrayList<>();
+        SQLiteDatabase maBD = this.getReadableDatabase();
+        try (Cursor c = maBD.rawQuery("select * from " + TABLE_house, null)){
+            while (c.moveToNext()) {
+                int id = c.getInt(0);
+                String location = c.getString(1);
+                String type = c.getString(2);
+                String number = c.getString(3);
+                String surface = c.getString(4);
+                String phone = c.getString(5);
+                byte[] imagebyte = c.getBlob(6);
+                Bitmap objectbitmap = BitmapFactory.decodeByteArray(imagebyte, 0, imagebyte.length);
+                String email = c.getString(7);
+                home.add(new Homeclasse(id, location, type, number, surface, phone, objectbitmap, email));
             }
+            return home;
         } catch (Exception e) {
-            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
-            return null;
+            e.printStackTrace();
+            return home;
         }
-
     }
 
 
