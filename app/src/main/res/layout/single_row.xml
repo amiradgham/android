@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:card_view="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+android:layout_marginLeft="5dp"
+android:layout_marginRight="5dp"
+card_view:cardCornerRadius="5dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+
+        <ImageView
+            android:id="@+id/teacherImageView"
+            android:layout_width="141dp"
+            android:layout_height="190dp"
+            android:padding="5dp"
+            android:src="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/nameTextView0"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/teacherImageView"
+            android:background="#79CBCA"
+            android:padding="2dp"
+            android:text="House Result"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/nameTextView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="34dp"
+            android:layout_toRightOf="@+id/teacherImageView"
+            android:padding="5dp"
+            android:text="Located at :"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#376F86"
+            android:textSize="15dp" />
+
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="51dp"
+            android:layout_toRightOf="@+id/teacherImageView"
+            android:padding="5dp"
+            android:text="Teacher Name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/teacherImageView"
+            android:layout_marginLeft="4dp"
+            android:layout_marginBottom="47dp"
+            android:layout_toRightOf="@+id/teacherImageView"
+            android:padding="5dp"
+            android:text="Teacher Description..."
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/descriptionTextView2"
+            android:layout_width="123dp"
+            android:layout_height="32dp"
+            android:layout_alignBottom="@+id/teacherImageView"
+            android:layout_marginLeft="32dp"
+            android:layout_marginBottom="43dp"
+            android:layout_toRightOf="@+id/teacherImageView"
+            android:padding="5dp"
+            android:text="Teacher Description..."
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/descriptionTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/teacherImageView"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="72dp"
+            android:layout_toRightOf="@+id/teacherImageView"
+            android:padding="5dp"
+            android:text="Room Number :"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#376F86"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/descriptionTextView4"
+            android:layout_width="207dp"
+            android:layout_height="31dp"
+            android:layout_alignBottom="@+id/teacherImageView"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="1dp"
+            android:layout_toRightOf="@+id/teacherImageView"
+            android:drawableLeft="@drawable/ic_phone_black_24dp"
+            android:padding="5dp"
+            android:text="Teacher Description..."
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="200dp"
+            android:background="@drawable/btn2"
+            android:drawableLeft="@drawable/ic_border_color_black_24dp"
+            android:paddingLeft="30dip"
+            android:paddingRight="26dip"
+            android:onClick="getData"
+            android:text="Update house"
+            android:textColor="#ffff"
+            android:layout_marginBottom="20dp"
+
+            />
+
+        <ProgressBar
+            android:id="@+id/myDataLoaderProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:indeterminateTint="#00C4B9"
+            android:visibility="gone" />
+
+        <ListView
+            android:id="@+id/myListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:numColumns="auto_fit" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
