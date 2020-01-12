@@ -134,7 +134,7 @@ public class HomeDatabaseHelper extends SQLiteOpenHelper {
 
     public void deleteData(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_house, id + " = "+id,null
+        db.delete(TABLE_house, "id = "+id,null
              );
         db.close();
     }
